@@ -36,7 +36,7 @@ export class UserService {
     });
   }
 
-  signup(usuario: string, password: string) {
+  register(usuario: string, password: string) {
     const headers = { 'Content-type': 'application/json' };
     const body = JSON.stringify({ usuario, password });
     return this.http.post(

@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   doSignup() {
     const { user, password } = this.form.value;
 
-    this.userService.signup(user, password).subscribe(
+    this.userService.register(user, password).subscribe(
       (user) => {
         this.userService.setUser(user);
         this.redirect();
