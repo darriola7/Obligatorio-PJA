@@ -7,7 +7,7 @@ import { SellsResponse } from '../interfaces/sellsResponse';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class AllService {
   user: any;
 
   constructor(private http: HttpClient) {}

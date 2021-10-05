@@ -1,7 +1,8 @@
 <div class="wrapper fadeInDown">
   <div id="formContent">
-    <a class="active" routerLink="/register">Sign In</a>
-    <h2 class="inactive underlineHover">Sign Up</h2>
+    
+    <h2 class="active">Sign In</h2>
+    <h2 class="inactive underlineHover" routerLink="/register">Sign Up</h2>
 
     <div class="fadeIn first">
       <img
@@ -13,15 +14,17 @@
 
     <form [formGroup]="form" (ngSubmit)="doLogin()">
       <input
+        matInput 
+        formControlName="user"
         type="text"
-        id="login"
         class="fadeIn second"
         name="login"
         placeholder="usuario"
       />
       <input
-        type="text"
-        id="password"
+        matInput 
+        formControlName="password"
+        type="password"
         class="fadeIn third"
         name="login"
         placeholder="contraseña"

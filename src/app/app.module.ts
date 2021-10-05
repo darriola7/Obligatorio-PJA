@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './routing/routing.module';
@@ -9,7 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Componentes
 import { LoginComponent } from './components/login/login.component';
-//import { SharedModule } from './components/shared/shared.module';
+import { SharedModule } from './components/shared/shared.module';
 import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
@@ -18,7 +19,7 @@ import { RegisterComponent } from './components/register/register.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    //SharedModule,
+    SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],

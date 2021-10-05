@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserService } from '../../services/user.service';
+import { AllService } from '../../services/all.service';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+  styleUrls: ['../login/login.component.css'],
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
     private router: Router,
-    private userService: UserService
+    private allService: AllService
   ) {
     this.form = this.fb.group({
       user: ['', Validators.required],
@@ -31,9 +31,9 @@ export class RegisterComponent implements OnInit {
   doSignup() {
     const { user, password } = this.form.value;
 
-    this.userService.register(user, password).subscribe(
+    this.allService.register(user, password).subscribe(
       (user) => {
-        this.userService.setUser(user);
+        this.allService.setUser(user);
         this.redirect();
       },
       ({ error: { mensaje } }) => {

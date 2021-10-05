@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { AllService } from '../../services/all.service';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
     private router: Router,
-    private userService: UserService
+    private allService: AllService
   ) {
     this.form = this.fb.group({
       user: ['', Validators.required],
@@ -29,13 +29,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   doLogin() {
-    const { user, password } = this.form.value;
-    // const user = this.form.value.user;
-    /// const password = this.form.value.password;
+    const user = this.form.value.user;
+    const password = this.form.value.password;
 
-    this.userService.login(user, password).subscribe(
+    this.allService.login(user, password).subscribe(
       (user) => {
-        this.userService.setUser(user);
+        this.allService.setUser(user);
         this.redirect();
       },
       ({ error: { mensaje } }) => {
