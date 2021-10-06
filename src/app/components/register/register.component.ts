@@ -11,7 +11,6 @@ import { AllService } from '../../services/all.service';
 })
 export class RegisterComponent implements OnInit {
   form: FormGroup;
-  loading = false;
   errMsg: any;
 
   constructor(
@@ -29,8 +28,9 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   doSignup() {
-    const { user, password } = this.form.value;
-
+    const user = this.form.value.user;
+    const password = this.form.value.password;
+    
     this.allService.register(user, password).subscribe(
       (user) => {
         this.allService.setUser(user);
@@ -52,9 +52,6 @@ export class RegisterComponent implements OnInit {
   }
 
   redirect() {
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate(['dashboard']);
-    }, 1000);
+    this.router.navigate(['dashboard']);
   }
 }

@@ -1,16 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-// Modulos
 import { ReactiveFormsModule } from '@angular/forms';
-
-// Angular Material
 import { MatSliderModule } from '@angular/material/slider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -18,6 +13,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
+import { NgApexchartsModule } from 'ng-apexcharts';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [],
@@ -29,7 +26,6 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
@@ -37,6 +33,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatGridListModule,
     MatCardModule,
+    MatExpansionModule,
+    NgApexchartsModule,
   ],
   exports: [
     CommonModule,
@@ -46,7 +44,6 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    MatProgressSpinnerModule,
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
@@ -54,6 +51,8 @@ import { MatCardModule } from '@angular/material/card';
     MatTableModule,
     MatGridListModule,
     MatCardModule,
+    MatExpansionModule,
+    NgApexchartsModule,
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

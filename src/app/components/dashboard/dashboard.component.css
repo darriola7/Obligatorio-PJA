@@ -1,0 +1,42 @@
+.dashboard-container{
+    padding: 2%;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 0 0 50px 0;
+}
+
+.dashboard-table-package-list{
+    width: 68%;
+}
+
+.dashboard-table-package-count{
+    width: 28%;
+}
+
+.dashboard-table-2{
+    align-self: auto;
+    width: 50%;
+}
+.dashboard-table-3{
+    align-self: auto;
+    width: 33.3%;
+}
+
+mat-expansion-panel{
+    margin-bottom: 2%;
+}
+
+.fila{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 0 50px 0;
+}

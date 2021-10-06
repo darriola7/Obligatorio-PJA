@@ -12,7 +12,6 @@ import { AllService } from '../../services/all.service';
 export class LoginComponent implements OnInit {
   form: FormGroup;
   errMsg: any;
-  loading = false;
 
   constructor(
     private fb: FormBuilder,
@@ -39,7 +38,6 @@ export class LoginComponent implements OnInit {
       },
       ({ error: { mensaje } }) => {
         this.error(mensaje);
-        //  this.errMsg = mensaje;
       }
     );
   }
@@ -53,9 +51,6 @@ export class LoginComponent implements OnInit {
   }
 
   redirect() {
-    this.loading = true;
-    setTimeout(() => {
-      this.router.navigate(['dashboard']);
-    }, 1000);
+    this.router.navigate(['dashboard']);
   }
 }

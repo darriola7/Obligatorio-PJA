@@ -24,9 +24,6 @@ export class AllService {
     return this.user?.apiKey;
   }
 
-  logOut() {
-    this.user = undefined;
-  }
 
   login(usuario: string, password: string) {
     const headers = { 'Content-type': 'application/json' };
@@ -61,7 +58,7 @@ export class AllService {
     );
   }
 
-  doSell(
+  postSell(
     nombreCliente: string,
     idPaquete: number,
     cantidadMayores: number,

@@ -1,0 +1,31 @@
+<div class="form">
+  <form [formGroup]="form" (ngSubmit)="doPurchase()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre de cliente</mat-label>
+      <input matInput formControlName="clientName" autocomplete="off" placeholder="Ej: Juan Garcia" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-select formControlName="idpackage">
+        <mat-option *ngFor="let item of packages" value="{{ item.id }}">{{
+          item.nombre
+          }}</mat-option>
+      </mat-select>
+      <mat-label>Paquete</mat-label>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad de adultos</mat-label>
+      <input type="number" matInput formControlName="quantityAdults" autocomplete="off" placeholder="Ej: 1" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad de menores</mat-label>
+      <input type="number" matInput formControlName="quantityKids" autocomplete="off" placeholder="Ej: 1" />
+    </mat-form-field>
+    <button type="submit" class="login-element-width button" [disabled]="form.invalid" mat-raised-button
+      color="primary">
+      Comprar
+    </button>
+  </form>
+</div>

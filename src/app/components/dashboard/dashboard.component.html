@@ -1,0 +1,53 @@
+<div class="fila">
+  <app-venta-paquete></app-venta-paquete>
+</div>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Paquetes vendidos
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div class="row">
+    <div class="dashboard-table-package-list">
+      <h4>Lista de paquetes vendidos</h4>
+      <app-lista-paquete [sells]="sells" [packages]="packages"></app-lista-paquete>
+    </div>
+    <div class="dashboard-table-package-count">
+      <h4>Cantidad de paquetes vendidos</h4>
+      <app-cantidad-ventas [sells]="sells"></app-cantidad-ventas>
+    </div>
+  </div>
+</mat-expansion-panel>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Destinos
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div class="row">
+    <div class="dashboard-table-3">
+      <app-top-destino [sells]="sells" [packages]="packages"></app-top-destino>
+    </div>
+    <div class="dashboard-table-3">
+      <app-promo-destino [sells]="sells" [packages]="packages"></app-promo-destino>
+    </div>
+    <div class="dashboard-table-3">
+      <app-personas-destino [sells]="sells" [packages]="packages"></app-personas-destino>
+    </div>
+  </div>
+</mat-expansion-panel>
+<mat-expansion-panel hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Gráficas
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+  <div class="row">
+    <div class="dashboard-table-2">
+      <app-grafica-personas-destino [sells]="sells" [packages]="packages"></app-grafica-personas-destino>
+    </div>
+    <div class="dashboard-table-2">
+      <app-grafica-precios-destino [sells]="sells" [packages]="packages"></app-grafica-precios-destino>
+    </div>
+  </div>
+</mat-expansion-panel>
